@@ -55,9 +55,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Netlify Identity Redirect Script -->
     <script>
       if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", (user: any) => {
+        const netlifyIdentity = window.netlifyIdentity;
+        netlifyIdentity.on("init", (user: any) => {
           if (!user) {
-            window.netlifyIdentity.on("login", () => {
+            netlifyIdentity.on("login", () => {
               document.location.href = "/admin/";
             });
           }
