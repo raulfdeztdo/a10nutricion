@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion, useInView, useAnimation, useReducedMotion } from 'framer-motion';
 
 interface AnimatedSectionProps {
   children: React.ReactNode;
@@ -18,6 +18,7 @@ export default function AnimatedSection({
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const controls = useAnimation();
   const [hasAnimated, setHasAnimated] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     if (isInView && !hasAnimated) {
@@ -27,10 +28,10 @@ export default function AnimatedSection({
   }, [isInView, controls, hasAnimated]);
 
   const directions = {
-    up: { y: 40 },
-    down: { y: -40 },
-    left: { x: 40 },
-    right: { x: -40 },
+    up: { y: shouldReduceMotion ? 0 : 40 },
+    down: { y: shouldReduceMotion ? 0 : -40 },
+    left: { x: shouldReduceMotion ? 0 : 40 },
+    right: { x: shouldReduceMotion ? 0 : -40 },
   };
 
   const variants = {
@@ -43,7 +44,7 @@ export default function AnimatedSection({
       x: 0,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: shouldReduceMotion ? 0.2 : 0.6,
         delay,
         ease: [0.25, 0.4, 0.25, 1],
       },
@@ -56,6 +57,7 @@ export default function AnimatedSection({
       initial="hidden"
       animate={controls}
       variants={variants}
+      style={{ willChange: 'transform, opacity' }}
       className={className}
     >
       {children}

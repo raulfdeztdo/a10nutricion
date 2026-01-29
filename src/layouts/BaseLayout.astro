@@ -1,6 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-
 interface Props {
   title: string;
   description: string;
@@ -43,27 +41,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Netlify Identity Widget (para CMS) -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- View Transitions -->
-    <ViewTransitions />
   </head>
   <body class="bg-neutral-50 text-neutral-900 antialiased">
     <slot />
-
-    <!-- Netlify Identity Redirect Script -->
-    <script>
-      if (window.netlifyIdentity) {
-        const netlifyIdentity = window.netlifyIdentity;
-        netlifyIdentity.on("init", (user: any) => {
-          if (!user) {
-            netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
   </body>
 </html>
