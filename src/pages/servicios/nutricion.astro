@@ -1,0 +1,252 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import AnimatedSection from '../../components/AnimatedSection';
+import AnimatedCard from '../../components/AnimatedCard';
+---
+
+<PageLayout
+  title="Nutrición Personalizada | A10 Nutrición"
+  description="Planes de nutrición personalizados diseñados por nutricionistas profesionales para alcanzar tus objetivos de salud."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24">
+    <AnimatedSection client:load direction="up" className="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6">
+          Nutrición Personalizada
+        </h1>
+        <p class="text-xl text-primary-100">
+          Transforma tu alimentación con planes nutricionales diseñados específicamente para ti
+        </p>
+      </div>
+    </AnimatedSection>
+  </section>
+
+  <!-- Service Details -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <AnimatedSection client:load direction="up">
+          <div class="prose prose-lg max-w-none mb-12">
+            <p class="text-xl text-neutral-600 leading-relaxed">
+              Nuestro servicio de nutrición personalizada está diseñado para ayudarte a alcanzar tus objetivos de salud de manera sostenible. Ya sea que busques perder peso, ganar masa muscular, mejorar tu rendimiento deportivo o simplemente adoptar hábitos más saludables, creamos un plan adaptado a tus necesidades únicas.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <AnimatedCard client:load delay={0.1}>
+            <div class="bg-neutral-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+              <span class="text-4xl">📋</span>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Evaluación Inicial
+            </h3>
+            <ul class="space-y-3 text-neutral-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Análisis completo de composición corporal</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Evaluación de hábitos alimenticios actuales</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Definición de objetivos realistas y medibles</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Identificación de alergias e intolerancias</span>
+              </li>
+            </ul>
+          </div>
+          </AnimatedCard>
+
+          <AnimatedCard client:load delay={0.2}>
+          <div class="bg-neutral-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+              <span class="text-4xl">🍽️</span>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Plan Nutricional
+            </h3>
+            <ul class="space-y-3 text-neutral-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Menú semanal personalizado y variado</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Recetas saludables y fáciles de preparar</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Lista de compras organizada</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Alternativas para cada comida</span>
+              </li>
+            </ul>
+          </div>
+          </AnimatedCard>
+
+          <AnimatedCard client:load delay={0.3}>
+          <div class="bg-neutral-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+              <span class="text-4xl">📊</span>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Seguimiento
+            </h3>
+            <ul class="space-y-3 text-neutral-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Revisiones semanales de progreso</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Ajustes del plan según evolución</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Soporte constante vía chat/email</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Mediciones y seguimiento fotográfico</span>
+              </li>
+            </ul>
+          </div>
+          </AnimatedCard>
+
+          <AnimatedCard client:load delay={0.4}>
+          <div class="bg-neutral-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+              <span class="text-4xl">🎓</span>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Educación Nutricional
+            </h3>
+            <ul class="space-y-3 text-neutral-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Aprende a leer etiquetas nutricionales</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Estrategias para comer fuera de casa</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Conceptos básicos de nutrición</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Recursos y herramientas útiles</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Process -->
+        <div class="mb-16">
+          <h2 class="font-heading font-bold text-3xl text-neutral-900 mb-8 text-center">
+            Proceso de Trabajo
+          </h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                1
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Primera Consulta</h4>
+                <p class="text-neutral-600">Conocemos tu situación actual, objetivos y preferencias. Realizamos mediciones y evaluación inicial.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                2
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Diseño del Plan</h4>
+                <p class="text-neutral-600">Creamos tu plan nutricional personalizado con menús, recetas y recomendaciones específicas.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                3
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Seguimiento Activo</h4>
+                <p class="text-neutral-600">Revisiones periódicas, ajustes del plan y soporte continuo para asegurar tu progreso.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                4
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Consolidación de Hábitos</h4>
+                <p class="text-neutral-600">Te ayudamos a mantener los resultados a largo plazo con educación nutricional y herramientas prácticas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-primary-600 rounded-2xl p-8 md:p-12 text-center text-white">
+          <h3 class="font-heading font-bold text-2xl md:text-3xl mb-4">
+            ¿Listo para empezar tu transformación?
+          </h3>
+          <p class="text-primary-100 mb-6 text-lg">
+            Agenda tu consulta inicial gratuita y comienza tu camino hacia una mejor salud
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+          >
+            Solicitar Consulta Gratis
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

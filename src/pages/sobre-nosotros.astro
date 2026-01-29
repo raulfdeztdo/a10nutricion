@@ -1,0 +1,264 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import AnimatedSection from '../components/AnimatedSection';
+import AnimatedCard from '../components/AnimatedCard';
+---
+
+<PageLayout
+  title="Sobre Nosotros | A10 Nutrición"
+  description="Conoce al equipo de profesionales certificados en nutrición y planificación física que te ayudará a alcanzar tus objetivos de salud."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24">
+    <AnimatedSection client:load direction="up" className="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6">
+          Sobre Nosotros
+        </h1>
+        <p class="text-xl text-primary-100">
+          Profesionales apasionados por tu bienestar y transformación
+        </p>
+      </div>
+    </AnimatedSection>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <AnimatedSection client:load direction="up" className="text-center mb-16">
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-neutral-900 mb-6">
+            Nuestra Historia
+          </h2>
+          <p class="text-lg text-neutral-600 leading-relaxed">
+            A10 Nutrición nace de la pasión por ayudar a las personas a mejorar su salud y bienestar a través de la nutrición personalizada y el ejercicio inteligente. Con más de 10 años de experiencia combinada, nuestro equipo de nutricionistas y entrenadores certificados ha ayudado a cientos de personas a alcanzar sus objetivos de salud y fitness.
+          </p>
+        </AnimatedSection>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <AnimatedCard client:load delay={0.1}>
+          <div class="bg-primary-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Nuestra Misión
+            </h3>
+            <p class="text-neutral-600">
+              Empoderar a las personas para que tomen el control de su salud mediante educación nutricional, planes personalizados y seguimiento profesional, creando hábitos sostenibles que perduren en el tiempo.
+            </p>
+          </div>
+          </AnimatedCard>
+
+          <AnimatedCard client:load delay={0.2}>
+          <div class="bg-primary-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-600 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Nuestra Visión
+            </h3>
+            <p class="text-neutral-600">
+              Ser el referente en nutrición y planificación física personalizada, reconocidos por nuestra excelencia profesional, enfoque humano y resultados comprobados en la transformación de vidas.
+            </p>
+          </div>
+          </AnimatedCard>
+        </div>
+
+        <!-- Values -->
+        <AnimatedSection client:load direction="up" delay={0.3}>
+        <div class="mb-16">
+          <h2 class="font-heading font-bold text-3xl text-neutral-900 mb-8 text-center">
+            Nuestros Valores
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <AnimatedCard client:load delay={0.4}>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">🎯</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Profesionalismo</h4>
+              <p class="text-neutral-600 text-sm">
+                Formación continua y aplicación de metodologías basadas en evidencia científica.
+              </p>
+            </div>
+            </AnimatedCard>
+            <AnimatedCard client:load delay={0.5}>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">❤️</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Empatía</h4>
+              <p class="text-neutral-600 text-sm">
+                Comprendemos que cada persona es única y merece un trato personalizado.
+              </p>
+            </div>
+            </AnimatedCard>
+            <AnimatedCard client:load delay={0.6}>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">🌟</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Excelencia</h4>
+              <p class="text-neutral-600 text-sm">
+                Compromiso con la calidad en cada aspecto de nuestro servicio.
+              </p>
+            </div>
+            </AnimatedCard>
+            <AnimatedCard client:load delay={0.7}>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">🤝</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Honestidad</h4>
+              <p class="text-neutral-600 text-sm">
+                Transparencia en nuestras recomendaciones y expectativas realistas.
+              </p>
+            </div>
+            </AnimatedCard>
+            <AnimatedCard client:load delay={0.8}>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">📚</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Educación</h4>
+              <p class="text-neutral-600 text-sm">
+                Enseñamos para que tomes decisiones informadas sobre tu salud.
+              </p>
+            </div>
+            </AnimatedCard>
+            <AnimatedCard client:load delay={0.9}>
+            <div class="text-center">
+              <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-3xl">🔄</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Sostenibilidad</h4>
+              <p class="text-neutral-600 text-sm">
+                Creamos cambios duraderos, no soluciones temporales.
+              </p>
+            </div>
+            </AnimatedCard>
+          </div>
+        </div>
+        </AnimatedSection>
+
+        <!-- What Makes Us Different -->
+        <div class="mb-16">
+          <h2 class="font-heading font-bold text-3xl text-neutral-900 mb-8 text-center">
+            Lo que nos diferencia
+          </h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Enfoque Integral</h4>
+                <p class="text-neutral-600">Combinamos nutrición y ejercicio para resultados óptimos y duraderos.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Seguimiento Constante</h4>
+                <p class="text-neutral-600">No te dejamos solo. Revisiones periódicas y ajustes según tu progreso.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Flexibilidad</h4>
+                <p class="text-neutral-600">Planes que se adaptan a tu vida real, no al revés.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Basado en Ciencia</h4>
+                <p class="text-neutral-600">Métodos respaldados por investigación científica actual.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team -->
+        <div class="bg-neutral-50 rounded-2xl p-8 md:p-12 text-center">
+          <h2 class="font-heading font-bold text-3xl text-neutral-900 mb-4">
+            Nuestro Equipo
+          </h2>
+          <p class="text-neutral-600 mb-8 max-w-2xl mx-auto">
+            Contamos con un equipo multidisciplinar de nutricionistas certificados, entrenadores personales y especialistas en psicología de la alimentación, todos comprometidos con tu éxito.
+          </p>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-xl p-6">
+              <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-4xl">👩‍⚕️</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-1">Nutricionistas</h4>
+              <p class="text-sm text-neutral-500 mb-2">Certificados y Colegiados</p>
+              <p class="text-sm text-neutral-600">Especialistas en nutrición clínica y deportiva</p>
+            </div>
+            <div class="bg-white rounded-xl p-6">
+              <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-4xl">🏋️</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-1">Entrenadores</h4>
+              <p class="text-sm text-neutral-500 mb-2">Certificación Internacional</p>
+              <p class="text-sm text-neutral-600">Expertos en fuerza y acondicionamiento</p>
+            </div>
+            <div class="bg-white rounded-xl p-6">
+              <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-4xl">🧠</span>
+              </div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-1">Psicólogos</h4>
+              <p class="text-sm text-neutral-500 mb-2">Especialistas en Conducta</p>
+              <p class="text-sm text-neutral-600">Apoyo en cambio de hábitos</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-600 text-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-6">
+          ¿Quieres conocernos mejor?
+        </h2>
+        <p class="text-xl text-primary-100 mb-8">
+          Agenda una consulta gratuita y descubre cómo podemos ayudarte
+        </p>
+        <a
+          href="/contacto"
+          class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+        >
+          Agendar Consulta Gratis
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>

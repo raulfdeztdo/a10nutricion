@@ -1,0 +1,64 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Gracias por contactarnos | A10 Nutrición"
+  description="Hemos recibido tu mensaje y te responderemos pronto."
+>
+  <section class="py-20 bg-white min-h-screen flex items-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <!-- Success Icon -->
+        <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-8">
+          <svg class="w-10 h-10 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+
+        <h1 class="font-heading font-bold text-4xl md:text-5xl text-neutral-900 mb-6">
+          ¡Mensaje Enviado!
+        </h1>
+
+        <p class="text-xl text-neutral-600 mb-8">
+          Gracias por contactarnos. Hemos recibido tu mensaje y nos pondremos en contacto contigo en menos de 24 horas.
+        </p>
+
+        <div class="bg-primary-50 rounded-xl p-6 mb-8">
+          <p class="text-neutral-700">
+            Mientras tanto, puedes explorar nuestro <a href="/blog" class="text-primary-600 font-medium hover:underline">blog</a> con consejos sobre nutrición y salud, o conocer más sobre nuestros <a href="/servicios/nutricion" class="text-primary-600 font-medium hover:underline">servicios</a>.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/"
+            class="px-8 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Volver al Inicio
+          </a>
+          <a
+            href="/blog"
+            class="px-8 py-3 bg-white text-primary-600 border-2 border-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+          >
+            Ver Blog
+          </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="mt-12 pt-8 border-t border-neutral-200">
+          <p class="text-neutral-600 mb-4">¿Necesitas ayuda urgente?</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:contacto@a10nutricion.com" class="text-primary-600 hover:underline">
+              contacto@a10nutricion.com
+            </a>
+            <span class="hidden sm:inline text-neutral-300">|</span>
+            <a href="tel:+34123456789" class="text-primary-600 hover:underline">
+              +34 123 456 789
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

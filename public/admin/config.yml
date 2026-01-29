@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Configuración local para desarrollo (opcional)
+# local_backend: true
+
+# Publicar modo
+publish_mode: editorial_workflow
+
+# Ubicación de los archivos media
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
+
+# Colecciones
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string", required: true }
+      - { label: "Descripción", name: "description", widget: "text", required: true }
+      - { label: "Fecha de Publicación", name: "pubDate", widget: "datetime", required: true, date_format: "YYYY-MM-DD", time_format: "HH:mm", format: "YYYY-MM-DDTHH:mm:ss.000Z" }
+      - { label: "Autor", name: "author", widget: "string", default: "A10 Nutrición", required: true }
+      - { label: "Imagen Destacada", name: "image", widget: "image", required: false, hint: "Tamaño recomendado: 1200x630px" }
+      - { label: "Etiquetas", name: "tags", widget: "list", required: false, default: [] }
+      - { label: "Contenido", name: "body", widget: "markdown", required: true }
+
+# Configuración del editor
+editor:
+  preview: true
+
+# Idioma de la interfaz
+locale: "es"

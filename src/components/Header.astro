@@ -1,0 +1,65 @@
+---
+import MobileMenu from './MobileMenu';
+import StickyHeader from './StickyHeader';
+
+const navItems = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Nutrición', href: '/servicios/nutricion' },
+  { name: 'Planificación Física', href: '/servicios/planificacion-fisica' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Sobre Nosotros', href: '/sobre-nosotros' },
+  { name: 'Contacto', href: '/contacto' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<StickyHeader client:load>
+  <nav class="container mx-auto px-4 py-4 relative">
+    <!-- Primera fila: Logo y botón X (solo móvil) o navegación completa (desktop) -->
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center relative z-50">
+        <img
+          src="/images/a10logo_black.png"
+          alt="A10 Nutrición Logo"
+          class="h-12 md:h-14 lg:h-16 w-auto transition-all hover:scale-105"
+        />
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex items-center space-x-8">
+        {navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class:list={[
+                'text-sm font-medium transition-all hover:text-primary-600 relative group',
+                currentPath === item.href
+                  ? 'text-primary-600'
+                  : 'text-neutral-600'
+              ]}
+            >
+              {item.name}
+              <span class:list={[
+                'absolute bottom-0 left-0 w-0 h-0.5 bg-primary-600 transition-all group-hover:w-full',
+                currentPath === item.href ? 'w-full' : ''
+              ]}></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA Button Desktop -->
+      <a
+        href="/contacto"
+        class="hidden md:inline-flex px-6 py-2.5 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300"
+      >
+        Consulta Gratis
+      </a>
+
+      <!-- Mobile Menu Button (solo el botón, no el menú) -->
+      <MobileMenu client:load navItems={navItems} currentPath={currentPath} />
+    </div>
+  </nav>
+</StickyHeader>

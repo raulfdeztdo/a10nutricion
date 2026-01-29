@@ -1,0 +1,218 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import AnimatedSection from '../components/AnimatedSection';
+import AnimatedCard from '../components/AnimatedCard';
+---
+
+<PageLayout
+  title="A10 Nutrición | Nutrición y Planificación Física Profesional"
+  description="Transformamos tu salud con nutrición personalizada y planificación física profesional. Alcanza tus objetivos con el acompañamiento de expertos."
+>
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 md:py-32 overflow-hidden">
+    <AnimatedSection client:load direction="up" className="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="font-heading font-bold text-4xl md:text-6xl mb-6">
+          Transforma tu Salud con
+          <span class="text-primary-200">Nutrición Profesional</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-primary-100 mb-8">
+          Planes personalizados de nutrición y entrenamiento diseñados para alcanzar tus objetivos de forma saludable y sostenible.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contacto"
+            class="px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-primary-50 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Consulta Gratuita
+          </a>
+          <a
+            href="/servicios/nutricion"
+            class="px-8 py-4 bg-primary-700 text-white font-semibold rounded-lg hover:bg-primary-900 hover:scale-105 transition-all duration-300 border-2 border-white"
+          >
+            Ver Servicios
+          </a>
+        </div>
+      </div>
+    </AnimatedSection>
+
+    <!-- Decorative elements -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg class="w-full h-16" viewBox="0 0 1440 48" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <path d="M0 48h1440V0C1440 0 1140 48 720 48S0 0 0 0v48z" fill="rgb(250, 250, 250)"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-neutral-50">
+    <AnimatedSection client:load direction="up" className="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <AnimatedCard client:load delay={0.1}>
+          <div class="text-center">
+            <div class="font-heading font-bold text-4xl md:text-5xl text-primary-600 mb-2">500+</div>
+            <p class="text-neutral-600">Clientes Satisfechos</p>
+          </div>
+        </AnimatedCard>
+        <AnimatedCard client:load delay={0.2}>
+          <div class="text-center">
+            <div class="font-heading font-bold text-4xl md:text-5xl text-primary-600 mb-2">10+</div>
+            <p class="text-neutral-600">Años de Experiencia</p>
+          </div>
+        </AnimatedCard>
+        <AnimatedCard client:load delay={0.3}>
+          <div class="text-center">
+            <div class="font-heading font-bold text-4xl md:text-5xl text-primary-600 mb-2">95%</div>
+            <p class="text-neutral-600">Tasa de Éxito</p>
+          </div>
+        </AnimatedCard>
+        <AnimatedCard client:load delay={0.4}>
+          <div class="text-center">
+            <div class="font-heading font-bold text-4xl md:text-5xl text-primary-600 mb-2">24/7</div>
+            <p class="text-neutral-600">Soporte Online</p>
+          </div>
+        </AnimatedCard>
+      </div>
+    </AnimatedSection>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <AnimatedSection client:load direction="up" className="text-center mb-16">
+        <h2 class="font-heading font-bold text-3xl md:text-5xl text-neutral-900 mb-4">
+          Nuestros Servicios
+        </h2>
+        <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
+          Soluciones integrales para tu bienestar físico y nutricional
+        </p>
+      </AnimatedSection>
+
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <AnimatedCard client:load delay={0.1}>
+          <ServiceCard
+            title="Nutrición Personalizada"
+            description="Planes nutricionales adaptados a tus necesidades, objetivos y estilo de vida."
+            icon="🥗"
+            features={[
+              'Evaluación nutricional completa',
+              'Plan alimenticio personalizado',
+              'Seguimiento semanal',
+              'Recetas saludables',
+              'Ajustes según progreso'
+            ]}
+          />
+        </AnimatedCard>
+
+        <AnimatedCard client:load delay={0.2}>
+          <ServiceCard
+            title="Planificación Física"
+            description="Programas de entrenamiento diseñados para maximizar resultados de forma segura."
+            icon="💪"
+            features={[
+              'Evaluación física inicial',
+              'Rutinas personalizadas',
+              'Seguimiento de progreso',
+              'Videos explicativos',
+              'Adaptación constante'
+            ]}
+          />
+        </AnimatedCard>
+      </div>
+
+      <AnimatedSection client:load direction="up" delay={0.3} className="text-center mt-12">
+        <a
+          href="/servicios/nutricion"
+          class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
+        >
+          Ver Todos los Servicios
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </AnimatedSection>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-20 bg-neutral-50">
+    <div class="container mx-auto px-4">
+      <AnimatedSection client:load direction="up" className="text-center mb-16">
+        <h2 class="font-heading font-bold text-3xl md:text-5xl text-neutral-900 mb-4">
+          ¿Por qué elegirnos?
+        </h2>
+        <p class="text-xl text-neutral-600 max-w-2xl mx-auto">
+          Comprometidos con tu éxito y bienestar
+        </p>
+      </AnimatedSection>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <AnimatedCard client:load delay={0.1}>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-4xl">🎯</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-neutral-900 mb-3">
+              Enfoque Personalizado
+            </h3>
+            <p class="text-neutral-600">
+              Cada plan es único y adaptado a tus necesidades específicas, objetivos y estilo de vida.
+            </p>
+          </div>
+        </AnimatedCard>
+
+        <AnimatedCard client:load delay={0.2}>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-4xl">👨‍⚕️</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-neutral-900 mb-3">
+              Profesionales Certificados
+            </h3>
+            <p class="text-neutral-600">
+              Equipo de nutricionistas y entrenadores con titulación oficial y años de experiencia.
+            </p>
+          </div>
+        </AnimatedCard>
+
+        <AnimatedCard client:load delay={0.3}>
+          <div class="text-center">
+            <div class="w-20 h-20 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+              <span class="text-4xl">📱</span>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-neutral-900 mb-3">
+              Seguimiento Continuo
+            </h3>
+            <p class="text-neutral-600">
+              Acompañamiento constante con revisiones periódicas y ajustes según tu evolución.
+            </p>
+          </div>
+        </AnimatedCard>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-primary-600 text-white">
+    <AnimatedSection client:load direction="up" className="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-6">
+          ¿Listo para Transformar tu Salud?
+        </h2>
+        <p class="text-xl text-primary-100 mb-8">
+          Agenda tu consulta gratuita y descubre cómo podemos ayudarte a alcanzar tus objetivos.
+        </p>
+        <a
+          href="/contacto"
+          class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-primary-50 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Solicitar Consulta Gratis
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </AnimatedSection>
+  </section>
+</PageLayout>

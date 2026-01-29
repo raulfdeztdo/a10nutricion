@@ -1,0 +1,12 @@
+# Placeholder images
+# En producción, reemplaza estos archivos con imágenes reales
+
+# Estructura recomendada:
+# /public/images/
+#   ├── og-default.jpg (1200x630px - Open Graph)
+#   └── blog/
+#       ├── mitos-nutricion.jpg (1200x630px)
+#       ├── rutina-casa.jpg (1200x630px)
+#       └── proteinas-guia.jpg (1200x630px)
+
+# Puedes usar servicios como Unsplash, Pexels o generar imágenes específicas

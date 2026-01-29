@@ -1,0 +1,175 @@
+---
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+
+export const getStaticPaths = (async () => {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const formattedDate = entry.data.pubDate.toLocaleDateString('es-ES', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<PageLayout
+  title={`${entry.data.title} | Blog A10 Nutrición`}
+  description={entry.data.description}
+  image={entry.data.image}
+>
+  <article class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <!-- Back Button -->
+        <a
+          href="/blog"
+          class="inline-flex items-center text-primary-600 hover:text-primary-700 mb-8 font-medium"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+          Volver al Blog
+        </a>
+
+        <!-- Header -->
+        <header class="mb-8">
+          {entry.data.image && (
+            <div class="aspect-video rounded-xl overflow-hidden mb-8">
+              <img
+                src={entry.data.image}
+                alt={entry.data.title}
+                class="w-full h-full object-cover"
+              />
+            </div>
+          )}
+
+          <div class="flex items-center space-x-4 text-sm text-neutral-500 mb-4">
+            <time datetime={entry.data.pubDate.toISOString()}>{formattedDate}</time>
+            <span>•</span>
+            <span>{entry.data.author}</span>
+          </div>
+
+          <h1 class="font-heading font-bold text-4xl md:text-5xl text-neutral-900 mb-4">
+            {entry.data.title}
+          </h1>
+
+          <p class="text-xl text-neutral-600">
+            {entry.data.description}
+          </p>
+
+          {entry.data.tags && entry.data.tags.length > 0 && (
+            <div class="flex flex-wrap gap-2 mt-6">
+              {entry.data.tags.map((tag) => (
+                <span class="px-3 py-1 bg-primary-100 text-primary-700 rounded-full text-sm font-medium">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          )}
+        </header>
+
+        <!-- Content -->
+        <div class="prose prose-lg max-w-none prose-headings:font-heading prose-headings:font-bold prose-a:text-primary-600 prose-a:no-underline hover:prose-a:underline prose-img:rounded-xl">
+          <Content />
+        </div>
+
+        <!-- Share -->
+        <div class="mt-12 pt-8 border-t border-neutral-200">
+          <p class="text-neutral-600 mb-4">Comparte este artículo:</p>
+          <div class="flex space-x-4">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(entry.data.title)}&url=${encodeURIComponent(Astro.url.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-4 py-2 bg-neutral-900 text-white rounded-lg hover:bg-neutral-800 transition-colors"
+            >
+              Twitter
+            </a>
+            <a
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(Astro.url.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Facebook
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-4 py-2 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition-colors"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CTA -->
+  <section class="py-16 bg-primary-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="font-heading font-bold text-3xl text-neutral-900 mb-4">
+          ¿Te ha gustado este artículo?
+        </h2>
+        <p class="text-neutral-600 mb-8">
+          Agenda una consulta gratuita y descubre cómo podemos ayudarte con tu nutrición
+        </p>
+        <a
+          href="/contacto"
+          class="inline-flex items-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+        >
+          Solicitar Consulta Gratis
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<style is:global>
+  .prose {
+    @apply text-neutral-700;
+  }
+
+  .prose h2 {
+    @apply text-3xl mt-12 mb-6 text-neutral-900;
+  }
+
+  .prose h3 {
+    @apply text-2xl mt-8 mb-4 text-neutral-900;
+  }
+
+  .prose p {
+    @apply mb-6 leading-relaxed;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-6 pl-6;
+  }
+
+  .prose li {
+    @apply mb-2;
+  }
+
+  .prose strong {
+    @apply text-neutral-900 font-semibold;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary-500 pl-4 italic my-6 text-neutral-600;
+  }
+</style>

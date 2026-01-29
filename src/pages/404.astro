@@ -1,0 +1,36 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout
+  title="Página No Encontrada | A10 Nutrición"
+  description="La página que buscas no existe."
+>
+  <section class="py-20 bg-white min-h-screen flex items-center">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="text-9xl font-heading font-bold text-primary-600 mb-4">404</div>
+        <h1 class="font-heading font-bold text-4xl text-neutral-900 mb-4">
+          Página No Encontrada
+        </h1>
+        <p class="text-xl text-neutral-600 mb-8">
+          Lo sentimos, la página que buscas no existe o ha sido movida.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/"
+            class="px-8 py-3 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+          >
+            Volver al Inicio
+          </a>
+          <a
+            href="/contacto"
+            class="px-8 py-3 bg-white text-primary-600 border-2 border-primary-600 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+          >
+            Contactar
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>

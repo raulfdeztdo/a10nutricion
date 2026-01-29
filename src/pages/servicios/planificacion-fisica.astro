@@ -1,0 +1,277 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import AnimatedSection from '../../components/AnimatedSection';
+import AnimatedCard from '../../components/AnimatedCard';
+---
+
+<PageLayout
+  title="Planificación Física | A10 Nutrición"
+  description="Programas de entrenamiento personalizados diseñados por profesionales para alcanzar tus objetivos fitness de forma segura y efectiva."
+>
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 md:py-24">
+    <AnimatedSection client:load direction="up" className="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="font-heading font-bold text-4xl md:text-5xl mb-6">
+          Planificación Física
+        </h1>
+        <p class="text-xl text-primary-100">
+          Entrena de forma inteligente con programas diseñados específicamente para ti
+        </p>
+      </div>
+    </AnimatedSection>
+  </section>
+
+  <!-- Service Details -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <AnimatedSection client:load direction="up">
+          <div class="prose prose-lg max-w-none mb-12">
+            <p class="text-xl text-neutral-600 leading-relaxed">
+              Nuestro servicio de planificación física combina ciencia del ejercicio y personalización para crear programas de entrenamiento que se adaptan a tu nivel, objetivos y disponibilidad. Ya sea que quieras ganar fuerza, mejorar tu condición física, perder grasa o prepararte para un evento deportivo, diseñamos el plan perfecto para ti.
+            </p>
+          </div>
+        </AnimatedSection>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-16">
+          <AnimatedCard client:load delay={0.1}>
+          <div class="bg-neutral-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+              <span class="text-4xl">📋</span>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Evaluación Física
+            </h3>
+            <ul class="space-y-3 text-neutral-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Análisis de condición física actual</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Test de fuerza y resistencia</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Evaluación de movilidad y flexibilidad</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Identificación de desequilibrios</span>
+              </li>
+            </ul>
+          </div>
+          </AnimatedCard>
+
+          <AnimatedCard client:load delay={0.2}>
+          <div class="bg-neutral-50 rounded-xl p-8">
+            <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+              <span class="text-4xl">🏋️</span>
+            </div>
+            <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+              Programa de Entrenamiento
+            </h3>
+            <ul class="space-y-3 text-neutral-600">
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Rutinas semanales personalizadas</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Videos demostrativos de ejercicios</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Progresiones adaptadas a tu nivel</span>
+              </li>
+              <li class="flex items-start">
+                <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Opciones de gimnasio o casa</span>
+              </li>
+            </ul>
+          </div>
+          </AnimatedCard>
+
+          <AnimatedCard client:load delay={0.3}>
+            <div class="bg-neutral-50 rounded-xl p-8">
+                <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+                <span class="text-4xl">📈</span>
+                </div>
+                <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+                Seguimiento de Progreso
+                </h3>
+                <ul class="space-y-3 text-neutral-600">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Registro de entrenamientos realizados</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Control de pesos y repeticiones</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Revisiones periódicas de técnica</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Ajustes según evolución</span>
+                </li>
+                </ul>
+            </div>
+          </AnimatedCard>
+
+          <AnimatedCard client:load delay={0.4}>
+            <div class="bg-neutral-50 rounded-xl p-8">
+                <div class="w-16 h-16 bg-primary-100 rounded-xl flex items-center justify-center mb-6">
+                <span class="text-4xl">💬</span>
+                </div>
+                <h3 class="font-heading font-bold text-2xl text-neutral-900 mb-4">
+                Soporte Profesional
+                </h3>
+                <ul class="space-y-3 text-neutral-600">
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Corrección de técnica por video</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Chat directo con tu entrenador</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Resolución de dudas en 24h</span>
+                </li>
+                <li class="flex items-start">
+                    <svg class="w-5 h-5 text-primary-600 mt-1 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                    </svg>
+                    <span>Motivación y accountability</span>
+                </li>
+                </ul>
+            </div>
+          </AnimatedCard>
+        </div>
+
+        <!-- Training Types -->
+        <div class="mb-16">
+          <h2 class="font-heading font-bold text-3xl text-neutral-900 mb-8 text-center">
+            Tipos de Entrenamiento
+          </h2>
+          <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border-2 border-neutral-200 rounded-xl p-6 hover:border-primary-300 transition-colors">
+              <div class="text-4xl mb-4">🏋️‍♀️</div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Fuerza e Hipertrofia</h4>
+              <p class="text-neutral-600 text-sm">Desarrollo muscular y aumento de fuerza con técnicas probadas.</p>
+            </div>
+            <div class="bg-white border-2 border-neutral-200 rounded-xl p-6 hover:border-primary-300 transition-colors">
+              <div class="text-4xl mb-4">🏃‍♂️</div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Pérdida de Grasa</h4>
+              <p class="text-neutral-600 text-sm">Entrenamiento metabólico y cardiovascular para quemar grasa.</p>
+            </div>
+            <div class="bg-white border-2 border-neutral-200 rounded-xl p-6 hover:border-primary-300 transition-colors">
+              <div class="text-4xl mb-4">⚡</div>
+              <h4 class="font-heading font-semibold text-lg text-neutral-900 mb-2">Acondicionamiento</h4>
+              <p class="text-neutral-600 text-sm">Mejora tu resistencia, movilidad y capacidad funcional.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Process -->
+        <div class="mb-16">
+          <h2 class="font-heading font-bold text-3xl text-neutral-900 mb-8 text-center">
+            Cómo Funciona
+          </h2>
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                1
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Evaluación Inicial</h4>
+                <p class="text-neutral-600">Analizamos tu nivel actual, objetivos, disponibilidad y equipamiento.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                2
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Diseño del Programa</h4>
+                <p class="text-neutral-600">Creamos tu rutina personalizada con ejercicios, series, repeticiones y progresiones.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                3
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Ejecución y Seguimiento</h4>
+                <p class="text-neutral-600">Entrenas siguiendo tu plan, registras tus sesiones y recibimos feedback continuo.</p>
+              </div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="w-10 h-10 bg-primary-600 text-white rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                4
+              </div>
+              <div>
+                <h4 class="font-heading font-semibold text-xl text-neutral-900 mb-2">Evolución Constante</h4>
+                <p class="text-neutral-600">Ajustamos tu programa cada 4-6 semanas para garantizar progreso continuo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-primary-600 rounded-2xl p-8 md:p-12 text-center text-white">
+          <h3 class="font-heading font-bold text-2xl md:text-3xl mb-4">
+            ¿Listo para alcanzar tu mejor versión física?
+          </h3>
+          <p class="text-primary-100 mb-6 text-lg">
+            Comienza hoy con una evaluación gratuita y descubre tu potencial
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center px-8 py-4 bg-white text-primary-700 font-semibold rounded-lg hover:bg-primary-50 transition-colors"
+          >
+            Solicitar Evaluación Gratis
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
