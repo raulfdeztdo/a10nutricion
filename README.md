@@ -53,6 +53,7 @@ La web estará disponible en `http://localhost:4321`
 │   │   ├── index.html
 │   │   └── config.yml
 │   ├── images/             # Imágenes públicas (logos)
+│   ├── favicon.svg
 │   └── og-image.svg
 ├── src/
 │   ├── components/         # Componentes reutilizables
@@ -70,15 +71,27 @@ La web estará disponible en `http://localhost:4321`
 │   ├── layouts/            # Layouts de página
 │   │   ├── BaseLayout.astro       # Layout base con View Transitions
 │   │   └── PageLayout.astro
-│   └── pages/              # Páginas y rutas
-│       ├── index.astro     # Home (con animaciones)
-│       ├── servicios/
-│       ├── blog/
-│       ├── contacto.astro
-│       └── sobre-nosotros.astro
+│   ├── pages/              # Páginas y rutas
+│   │   ├── index.astro            # Home (con animaciones)
+│   │   ├── contacto.astro
+│   │   ├── sobre-nosotros.astro
+│   │   ├── privacidad.astro
+│   │   ├── terminos.astro
+│   │   ├── 404.astro
+│   │   ├── servicios/
+│   │   │   ├── nutricion.astro
+│   │   │   └── planificacion-fisica.astro
+│   │   ├── blog/
+│   │   │   ├── index.astro        # Lista de posts
+│   │   │   └── [slug].astro       # Post individual
+│   │   └── contacto/
+│   │       └── gracias.astro      # Página de confirmación
+│   └── types/              # Definiciones de tipos TypeScript
+│       └── netlify-identity.d.ts
 ├── astro.config.mjs        # Configuración de Astro + React
 ├── tailwind.config.mjs     # Configuración de Tailwind
 ├── tsconfig.json
+├── netlify.toml            # Configuración de Netlify
 └── package.json
 ```
 
@@ -98,15 +111,15 @@ Este proyecto incluye animaciones modernas con **React** y **Framer Motion**.
 ### Componentes Animados
 
 - **MobileMenu**: Menú móvil con icono hamburguesa animado
-- **AnimatedSection**: Animaciones al hacer scroll (4 direcciones)
+- **AnimatedSection**: Animaciones al hacer scroll (fade-up, fade-down, fade-left, fade-right)
 - **AnimatedCard**: Cards con hover effects y entrada animada
-- **StickyHeader**: Header con efectos de scroll
+- **StickyHeader**: Header sticky con efectos de scroll y cambio de fondo
 
-**Ver guía completa:** [ANIMACIONES.md](ANIMACIONES.md)
+Todos los componentes animados se encuentran en la carpeta [src/components](src/components).
 
 ### View Transitions
 
-Transiciones suaves entre páginas usando la API nativa de Astro.
+Transiciones suaves entre páginas usando la API de View Transitions de Astro (configurada en [BaseLayout.astro](src/layouts/BaseLayout.astro)).
 
 ## 📝 Gestión del Blog con Decap CMS
 
@@ -247,19 +260,19 @@ colors: {
 
 ### Modificar Contenido
 
-- **Textos de páginas**: Edita archivos en `src/pages/`
+- **Textos de páginas**: Edita archivos en [src/pages/](src/pages)
 - **Información de contacto**: Edita [src/components/Footer.astro](src/components/Footer.astro)
 - **Menú de navegación**: Edita [src/components/Header.astro](src/components/Header.astro)
 
 ### Añadir Imágenes
 
-1. Coloca imágenes en `public/images/`
+1. Coloca imágenes en [public/images/](public/images)
 2. Referencia como `/images/nombre-imagen.jpg`
 
 **Tamaños recomendados:**
 - Open Graph: 1200x630px
 - Imágenes de blog: 1200x630px
-- Logotipo: 400x400px
+- Logotipo: 400x400px (el proyecto incluye `a10logo_black.png` y `a10logo_white.png`)
 
 ## 📊 SEO
 
@@ -300,16 +313,17 @@ Es normal. Netlify Forms solo funciona en producción o con [Netlify Dev](https:
 ### CMS no muestra contenido
 
 Verifica que:
-1. Los archivos estén en `src/content/blog/`
+1. Los archivos estén en [src/content/blog/](src/content/blog)
 2. Incluyan el frontmatter correcto
 3. El formato sea `.md`
 
 ### Build falla en Netlify
 
 Revisa:
-1. Node version en `netlify.toml`
-2. Que todas las dependencias estén en `package.json`
+1. Node version en [netlify.toml](netlify.toml) (actualmente configurado en v20)
+2. Que todas las dependencias estén en [package.json](package.json)
 3. Los logs de build en Netlify
+4. Errores de TypeScript - el comando de build incluye `astro check`
 
 ## 📚 Recursos Adicionales
 
