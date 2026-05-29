@@ -29,8 +29,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Fetch all remote branches
-          git fetch --all
+          # Fetch the latest state of origin
+          git fetch origin
 
           # Get all open PRs targeting main
           prs=$(gh pr list --base main --state open --json number,headRefName \
@@ -45,23 +45,35 @@ jobs:
             echo "──────────────────────────────────────"
             echo "Processing PR #$pr_number (branch: $branch_name)"
 
-            # Checkout the PR branch tracking the remote
-            git checkout -B "$branch_name" "origin/$branch_name"
+            # Reset to the remote PR branch (avoids -B side-effects and stale local state)
+            git checkout --detach "origin/$branch_name"
+            git checkout -b "pr-${pr_number}-work"
 
-            # Merge main into the PR branch (no rebase)
-            if git merge origin/main --no-edit -m "chore: merge main into $branch_name"; then
-              git push origin "$branch_name"
-              echo "✅ PR #$pr_number: branch updated with latest main"
-
-              # Enable auto-merge so the PR merges once required checks pass
-              gh pr merge "$pr_number" --merge --auto \
-                && echo "✅ PR #$pr_number: auto-merge enabled" \
-                || echo "⚠️  PR #$pr_number: could not enable auto-merge (may already be set or checks not configured)"
+            # Skip if the branch already contains all commits from main
+            if git merge-base --is-ancestor origin/main HEAD; then
+              echo "✅ PR #$pr_number: branch is already up-to-date with main, skipping merge"
             else
-              echo "⚠️  PR #$pr_number: merge conflict detected, skipping"
-              git merge --abort
+              # Merge main into the PR branch (no rebase)
+              if git merge origin/main --no-edit -m "chore: merge main into $branch_name"; then
+                git push origin "HEAD:$branch_name"
+                echo "✅ PR #$pr_number: branch updated with latest main"
+              else
+                echo "⚠️  PR #$pr_number: merge conflict detected, skipping"
+                git merge --abort
+                git checkout main
+                git branch -D "pr-${pr_number}-work"
+                continue
+              fi
             fi
 
-            # Return to main for the next iteration
+            # Enable auto-merge so the PR merges once required checks pass.
+            # gh pr merge --auto respects branch protection rules (required reviews,
+            # status checks) and will only merge when all conditions are satisfied.
+            gh pr merge "$pr_number" --merge --auto \
+              && echo "✅ PR #$pr_number: auto-merge enabled" \
+              || echo "⚠️  PR #$pr_number: could not enable auto-merge (may already be set or checks not configured)"
+
+            # Clean up temporary local branch and return to main
             git checkout main
+            git branch -D "pr-${pr_number}-work"
           done <<< "$prs"
