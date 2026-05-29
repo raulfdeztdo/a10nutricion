@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.2",
+    "@astrojs/check": "^0.9.9",
     "@astrojs/react": "^3.6.2",
     "@astrojs/tailwind": "^5.1.2",
     "@types/react": "^18.3.12",
@@ -22,7 +22,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
   },
-  "description": "Web corporativa de nutrición y planificación física",
+  "description": "Web corporativa de nutrici\u00f3n y planificaci\u00f3n f\u00edsica",
   "keywords": [
     "astro",
     "tailwind",
@@ -30,5 +30,5 @@
     "fitness",
     "decap-cms"
   ],
-  "author": "A10 Nutrición"
+  "author": "A10 Nutrici\u00f3n"
 }
