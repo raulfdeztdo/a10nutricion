@@ -22,7 +22,7 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.7.2"
   },
-  "description": "Web corporativa de nutrición y planificación física",
+  "description": "Web corporativa de nutrici\u00f3n y planificaci\u00f3n f\u00edsica",
   "keywords": [
     "astro",
     "tailwind",
@@ -30,5 +30,5 @@
     "fitness",
     "decap-cms"
   ],
-  "author": "A10 Nutrición"
+  "author": "A10 Nutrici\u00f3n"
 }
