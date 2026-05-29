@@ -1,0 +1,67 @@
+name: Update PR branches with main and merge
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  update-and-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Merge main into each open PR branch and enable auto-merge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Fetch all remote branches
+          git fetch --all
+
+          # Get all open PRs targeting main
+          prs=$(gh pr list --base main --state open --json number,headRefName \
+            --jq '.[] | "\(.number) \(.headRefName)"')
+
+          if [ -z "$prs" ]; then
+            echo "No open PRs targeting main found."
+            exit 0
+          fi
+
+          while IFS=' ' read -r pr_number branch_name; do
+            echo "──────────────────────────────────────"
+            echo "Processing PR #$pr_number (branch: $branch_name)"
+
+            # Checkout the PR branch tracking the remote
+            git checkout -B "$branch_name" "origin/$branch_name"
+
+            # Merge main into the PR branch (no rebase)
+            if git merge origin/main --no-edit -m "chore: merge main into $branch_name"; then
+              git push origin "$branch_name"
+              echo "✅ PR #$pr_number: branch updated with latest main"
+
+              # Enable auto-merge so the PR merges once required checks pass
+              gh pr merge "$pr_number" --merge --auto \
+                && echo "✅ PR #$pr_number: auto-merge enabled" \
+                || echo "⚠️  PR #$pr_number: could not enable auto-merge (may already be set or checks not configured)"
+            else
+              echo "⚠️  PR #$pr_number: merge conflict detected, skipping"
+              git merge --abort
+            fi
+
+            # Return to main for the next iteration
+            git checkout main
+          done <<< "$prs"
